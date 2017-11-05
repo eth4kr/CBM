@@ -1,0 +1,24 @@
+{
+    "name":"checkbait",
+    "version":"1.0",
+    "manifest_version":2,
+    "description":"Checkmate to clickbait!",
+    "browser_action":{
+        "default_icon":"icon.png",
+        "default_title":"checkbait"
+    },
+    "background":{
+        "scripts":["background.js"]
+    },
+    "permissions":[
+        "activeTab"
+    ],
+    "content_scripts": [{
+        "js": ["jquery-3.1.1.min.js","FileSaver.js"],
+        "matches": ["<all_urls>"]
+    }],
+    "content_security_policy":"script-src 'self' https://www.google.com; object-src 'self'",
+    "icons":{
+        "128": "icon.png"
+    }
+}
